@@ -1,0 +1,41 @@
+{
+    "type": "Ext.navigation.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "menuHolder",
+        "designer|userClassName": "Holder"
+    },
+    "name": "MyNavigationView",
+    "designerId": "7cc41e00-ab02-45e6-ac84-ec16a43bec64",
+    "cn": [
+        {
+            "type": "Ext.navigation.Bar",
+            "reference": {
+                "name": "navigationBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "hidden": true
+            },
+            "name": "MyNavigationBar",
+            "designerId": "e08a662b-8709-4213-80bc-177f0d3e6f2f"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "mainviewport",
+            "designerId": "4fc9deca-18e2-4f5c-9a58-5658de0eb1ee",
+            "masterInstanceId": "08cf1b0b-6488-4ee6-ab7a-b1da8d3ddcce"
+        }
+    ]
+}

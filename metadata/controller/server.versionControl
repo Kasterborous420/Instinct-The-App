@@ -1,0 +1,68 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "server.versionControl"
+    },
+    "name": "MyController",
+    "designerId": "3bfeeb78-9af5-4e79-98ed-91ce6aa6c73f",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callbackFn"
+                ],
+                "fn": "checkServerVersion",
+                "implHandler": [
+                    "var successCallback = function(resp, ops) {",
+                    "    if(resp.status === 200){",
+                    "        var responseData = Ext.JSON.decode(resp.responseText);",
+                    "        if(responseData.errorHandle == \"alert\"){",
+                    "            if(responseData.errorText !== \"\"){",
+                    "                Ext.Msg.alert(false, responseData.errorText);",
+                    "            }",
+                    "            if(responseData.successText !== \"\"){",
+                    "                Ext.Msg.alert(false, responseData.successText);",
+                    "            }",
+                    "        }",
+                    "        if(responseData.success === true){",
+                    "            callbackFn(responseData.data[0].latestVersion);",
+                    "        }else{",
+                    "            callbackFn(\"Error\");",
+                    "        }",
+                    "    }else{",
+                    "        Ext.Msg.alert(false,\"server is down, Please try again later!\");",
+                    "        callbackFn(\"Error\");",
+                    "    }",
+                    "};",
+                    "var failureCallback = function(resp, ops) {",
+                    "    callbackFn(\"Error\");",
+                    "};",
+                    "",
+                    "Ext.Ajax.request({",
+                    "    url: \"http://iriks-it.nl/PokemonGo/Instinct/modules/authentication/version.php\",",
+                    "    disableCaching: false,",
+                    "    headers: {",
+                    "        \"Content-Type\": \"application/json\"",
+                    "    },",
+                    "    method: 'POST',",
+                    "    success: successCallback,",
+                    "    failure: failureCallback",
+                    "});"
+                ]
+            },
+            "name": "checkServerVersion",
+            "designerId": "d0c36820-3fea-497c-b791-474849250757"
+        }
+    ]
+}

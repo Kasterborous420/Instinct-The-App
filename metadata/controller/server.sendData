@@ -1,0 +1,59 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "server.sendData"
+    },
+    "name": "MyController",
+    "designerId": "cca824ed-6c11-4088-bf49-9e630399b2c5",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "base64",
+                    "callbackFn"
+                ],
+                "fn": "pictureUpload",
+                "implHandler": [
+                    "    var userId\t\t\t= settings.get('userId');",
+                    "    var userToken\t\t= settings.get('userToken');",
+                    "    var successCallback = function(resp, ops) {",
+                    "        var responseData \t= Ext.JSON.decode(resp.responseText);",
+                    "        callbackFn(true,responseData);",
+                    "    };",
+                    "    var failureCallback = function(resp, ops) {",
+                    "        callbackFn(false,\"\");",
+                    "    };",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: \"http://iriks-it.nl/PokemonGo/Instinct/modules/images/edit.php?new=true\",",
+                    "        disableCaching: false,",
+                    "        headers: {",
+                    "            \"Content-Type\": \"application/json\"",
+                    "        },",
+                    "        method: 'POST',",
+                    "        jsonData: {",
+                    "            \"userid\": userId,",
+                    "            \"token\"\t: userToken,",
+                    "            \"base64\": base64,",
+                    "        },",
+                    "        success: successCallback,",
+                    "        failure: failureCallback",
+                    "    });"
+                ]
+            },
+            "name": "pictureUpload",
+            "designerId": "0263a98d-4e45-4fa5-978d-88369f782055"
+        }
+    ]
+}

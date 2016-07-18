@@ -1,0 +1,18 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mainViewport",
+        "designer|userClassName": "mainViewport",
+        "id": "mainViewport",
+        "itemId": "mainViewport",
+        "layout": "card",
+        "scrollable": null
+    },
+    "name": "MyContainer1",
+    "designerId": "08cf1b0b-6488-4ee6-ab7a-b1da8d3ddcce"
+}

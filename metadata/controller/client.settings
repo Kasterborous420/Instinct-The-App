@@ -1,0 +1,196 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "client.settings"
+    },
+    "name": "MyController",
+    "designerId": "2577e9f5-7814-4c43-a71e-e695d13567b9",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "name"
+                ],
+                "fn": "getSetting",
+                "implHandler": [
+                    "if(name in settings.settings){",
+                    "    return settings.settings[name];",
+                    "} else {",
+                    "    return false;",
+                    "}"
+                ]
+            },
+            "name": "getSetting",
+            "designerId": "a22dc483-6f00-4993-a81c-005ba0127642"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "key",
+                    "value",
+                    "clb"
+                ],
+                "fn": "setSetting",
+                "implHandler": [
+                    "if (window.sqlitePlugin) {",
+                    "    sqlite.getRows(",
+                    "        'settings',",
+                    "        ['key'],",
+                    "        [key],",
+                    "        function(results){",
+                    "            if(results){",
+                    "                sqlite.updateRow('settings', results[0].id, ['key', 'value'], [key, value], function(result){ clb(); });",
+                    "            } else {",
+                    "                sqlite.insertRow('settings',['key', 'value'], [key, value], function(result){ clb(); });",
+                    "            }",
+                    "            settings.settings[key] = value;",
+                    "        }",
+                    "    );",
+                    "}else{",
+                    "    //console.log(\"Localstore as backup!\");",
+                    "    localStorage.setItem(key, value);",
+                    "    clb();",
+                    "}"
+                ]
+            },
+            "name": "setSetting",
+            "designerId": "f10dd569-d9a5-4502-8ac8-f5fc03a9efb9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callbackfn"
+                ],
+                "fn": "loadSettings",
+                "implHandler": [
+                    "if(window.cordova && window.sqlitePlugin){",
+                    "",
+                    "    settings = {",
+                    "        loadSettings: this.loadSettings,",
+                    "        get: this.getSetting,",
+                    "        set: this.setSetting,",
+                    "        removeAll: this.removeAll,",
+                    "        settings: {}",
+                    "    };",
+                    "",
+                    "    // Create settings table",
+                    "    sqlite.createTable('settings', ['key', 'value'], ['text', 'text'], function(){",
+                    "        sqlite.query(\"SELECT * FROM Settings\", [], function(result){",
+                    "            data = sqlite.fetch(result);",
+                    "",
+                    "            settings.settings = {};",
+                    "            Ext.each(data, function(setting){",
+                    "                settings.settings[setting.key] = setting.value;",
+                    "            });",
+                    "",
+                    "            callbackfn(settings.settings);",
+                    "        });",
+                    "",
+                    "    });",
+                    "",
+                    "} else {",
+                    "    settings = {",
+                    "",
+                    "        loadSettings: function(callbackFn){ callbackFn(); },",
+                    "        get: function(name){",
+                    "            var myStoreSearch = localStorage.getItem(name);",
+                    "            if(myStoreSearch === null && typeof myStoreSearch === \"object\"){",
+                    "                return false;",
+                    "            }else{",
+                    "                return myStoreSearch;",
+                    "            }",
+                    "        },",
+                    "        set: function(key, value, clb){",
+                    "            localStorage.setItem(key, value);",
+                    "            if(typeof clb == 'function'){",
+                    "                clb();",
+                    "            }",
+                    "            return false;",
+                    "        },",
+                    "        removeAll: function(callbackFn){",
+                    "            callbackFn();",
+                    "            return true;",
+                    "        }",
+                    "    };",
+                    "",
+                    "    callbackfn(settings.settings);",
+                    "",
+                    "    if(window.cordova){",
+                    "        Ext.Msg.alert(false, 'ERROR: SQLITE PLUGIN NOT WORKING!');",
+                    "    }",
+                    "}"
+                ]
+            },
+            "name": "loadSettings",
+            "designerId": "bc412d0f-2ac1-43d8-af00-29db790fbde4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callbackFn"
+                ],
+                "fn": "removeAll",
+                "implHandler": [
+                    "if (window.sqlitePlugin) {",
+                    "    sqlite.query(\"DELETE FROM Settings\", [], function(result){ callbackFn(); });",
+                    "}"
+                ]
+            },
+            "name": "removeAll",
+            "designerId": "7988383b-c9e9-4d38-adf3-88559a1b7181"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "prepSettings",
+                "implHandler": [
+                    "console.log('settings done');",
+                    "this.settings = {};",
+                    "Ext.define('settings', {",
+                    "    singleton: true,",
+                    "    loadSettings: this.loadSettings,",
+                    "    get: this.getSetting,",
+                    "    set: this.setSetting",
+                    "});",
+                    "console.log(this);"
+                ]
+            },
+            "name": "prepSettings",
+            "designerId": "d352b6db-d046-419b-be30-1797fee7a1a7"
+        }
+    ]
+}

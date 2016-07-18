@@ -1,0 +1,79 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "server.checkPlayerData"
+    },
+    "name": "MyController",
+    "designerId": "c2905ba6-8481-4891-adb5-a3f6da4bda8d",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callbackFn"
+                ],
+                "fn": "checkToken",
+                "implHandler": [
+                    "var userId\t\t= settings.get('userId');",
+                    "var userToken\t= settings.get('userToken');",
+                    "if(userId === false || userToken === false){",
+                    "    callbackFn(false);",
+                    "}else{",
+                    "    var successCallback = function(resp, ops) {",
+                    "        if(resp.status === 200){",
+                    "            var responseData = Ext.JSON.decode(resp.responseText);",
+                    "            if(responseData.errorHandle == \"alert\"){",
+                    "                if(responseData.errorText !== \"\"){",
+                    "                    Ext.Msg.alert(false, responseData.errorText);",
+                    "                }",
+                    "                if(responseData.successText !== \"\"){",
+                    "                    Ext.Msg.alert(false, responseData.successText);",
+                    "                }",
+                    "            }",
+                    "            if(responseData.success === true){",
+                    "                callbackFn(true);",
+                    "            }else{",
+                    "",
+                    "                callbackFn(false);",
+                    "            }",
+                    "        }else{",
+                    "            Ext.Msg.alert(false,\"Login server down, Please try again later!\");",
+                    "            callbackFn(false);",
+                    "        }",
+                    "    };",
+                    "    var failureCallback = function(resp, ops) {",
+                    "        callbackFn(false);",
+                    "    };",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: \"http://iriks-it.nl/PokemonGo/Instinct/modules/authentication/checkToken.php\",",
+                    "        disableCaching: false,",
+                    "        headers: {",
+                    "            \"Content-Type\": \"application/json\"",
+                    "        },",
+                    "        method: 'POST',",
+                    "        jsonData: {",
+                    "            \"userid\": userId,",
+                    "            \"token\"\t: userToken,",
+                    "        },",
+                    "        success: successCallback,",
+                    "        failure: failureCallback",
+                    "    });",
+                    "}"
+                ]
+            },
+            "name": "checkToken",
+            "designerId": "22bf4b15-c6f0-40f4-b066-ee55bab25f60"
+        }
+    ]
+}

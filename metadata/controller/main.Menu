@@ -1,0 +1,13 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "main.Menu"
+    },
+    "name": "MyController",
+    "designerId": "c41f3b7e-fe1d-4de1-ab39-27fab27008c0"
+}

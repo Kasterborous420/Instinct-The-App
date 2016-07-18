@@ -1,0 +1,81 @@
+{
+   "builds": {
+      "ios": {
+         "packager": "cordova",
+         "cordova": {
+            "config": {
+               "platforms": "ios",
+               "remote": false,
+               "id": "com.vaultcut.app",
+               "name": "Team Instinct"
+            }
+         }
+      },
+      "android": {
+         "packager": "cordova",
+         "cordova": {
+            "config": {
+               "platforms": "android",
+               "remote": false,
+               "id": "com.vaultcut.app",
+               "name": "Team Instinct"
+            }
+         }
+      }
+   },
+   "name": "Instinct",
+   "indexHtmlPath": "index.html",
+   "framework": "touch",
+   "url": null,
+   "js": [
+      {
+         "path": "touch/sencha-touch.js",
+         "x-bootstrap": true
+      },
+      {
+         "path": "bootstrap.js",
+         "x-bootstrap": true
+      },
+      {
+         "path": "app.js",
+         "bundle": true,
+         "update": "delta"
+      }
+   ],
+   "css": [
+      {
+         "update": "delta",
+         "platform": [
+            "phone",
+            "tablet",
+            "desktop"
+         ],
+         "theme": "Default",
+         "path": "resources/css/sencha-touch-92a4dc40-17b7-4708-9b63-85e9a560f0eb.css"
+      }
+   ],
+   "appCache": {
+      "cache": [
+         "index.html"
+      ],
+      "network": [
+         "*"
+      ],
+      "fallback": []
+   },
+   "resources": [
+      "resources/images",
+      "resources/icons",
+      "resources/startup"
+   ],
+   "ignore": [
+      ".svn$"
+   ],
+   "archivePath": "archive",
+   "requires": [],
+   "cache": {
+      "enable": true,
+      "deltas": "deltas"
+   },
+   "id": "60ce4cd9-b107-4eb4-9d71-b479235a8576"
+}

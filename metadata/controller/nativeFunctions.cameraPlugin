@@ -1,0 +1,117 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "nativeFunctions.cameraPlugin"
+    },
+    "name": "MyController",
+    "designerId": "f483faa6-3e39-48e8-aadf-3b50d675ed9c",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "checkPlugin",
+                "implHandler": [
+                    "if(typeof navigator !== 'undefined' && typeof navigator.camera !== 'undefined'){",
+                    "    return true;",
+                    "}else{",
+                    "    console.log('Cordova plugin not found, please make sure you are running this in an emulator');",
+                    "    Ext.Msg.alert(false, \"No camera functionality / photo library found. You will not be able to use the camera / photo library in this app!\");",
+                    "    return false;",
+                    "}"
+                ]
+            },
+            "name": "checkPlugin",
+            "designerId": "c35b9d35-a627-47f7-8f11-69ab59662952"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callbackFn"
+                ],
+                "fn": "loadPhoto",
+                "implHandler": [
+                    "navigator.camera.getPicture(",
+                    "    function(photo){",
+                    "        callbackFn(photo, 'true');",
+                    "    },",
+                    "    function(error){",
+                    "        //Ext.Msg.alert(false,error);",
+                    "        Ext.Viewport.unmask();",
+                    "        console.log('error : '+ error);",
+                    "        callbackFn(error, 'false');",
+                    "    },",
+                    "    {",
+                    "        quality: 49,",
+                    "        destinationType: navigator.camera.DestinationType.DATA_URL,",
+                    "        //destinationType: navigator.camera.DestinationType.FILE_URI,",
+                    "        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,",
+                    "        targetWidth:1500,",
+                    "        targetHeight:1500,",
+                    "        correctOrientation: true,",
+                    "        //allowEdit : true,",
+                    "        encodingType: Camera.EncodingType.JPEG",
+                    "    }",
+                    ");"
+                ]
+            },
+            "name": "loadPhoto",
+            "designerId": "c586e891-e97f-4a25-bb9c-c6865c500948"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callbackFn"
+                ],
+                "fn": "takePhoto",
+                "implHandler": [
+                    "navigator.camera.getPicture(",
+                    "    function(photo){",
+                    "        callbackFn(photo, 'true');",
+                    "    },",
+                    "    function(error){",
+                    "        //Ext.Msg.alert(false,error);",
+                    "        Ext.Viewport.unmask();",
+                    "        console.log('error : '+ error);",
+                    "        callbackFn(error, 'false');",
+                    "    },",
+                    "    {",
+                    "        quality: 49,",
+                    "        destinationType: navigator.camera.DestinationType.DATA_URL,",
+                    "        //destinationType: navigator.camera.DestinationType.FILE_URI,",
+                    "        sourceType: navigator.camera.PictureSourceType.CAMERA,",
+                    "        targetWidth:1500,",
+                    "        targetHeight:1500,",
+                    "        correctOrientation: true,",
+                    "        //allowEdit : true,",
+                    "        encodingType: Camera.EncodingType.JPEG",
+                    "    }",
+                    ");"
+                ]
+            },
+            "name": "takePhoto",
+            "designerId": "ff7b2589-a60d-43d6-9f9b-d21cc7f9387c"
+        }
+    ]
+}

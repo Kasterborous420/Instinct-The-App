@@ -1,0 +1,34 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "introMain",
+        "designer|userClassName": "intro.Main"
+    },
+    "name": "MyPanel",
+    "designerId": "db1d4a5b-2ebb-405c-a084-7ec3ac384083",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "introContainer"
+                ],
+                "designer|displayName": "introContainer",
+                "minHeight": "100%",
+                "style": null
+            },
+            "name": "MyContainer3",
+            "designerId": "4e4b203d-d8fc-403e-a1cc-e0cba1eae0ac"
+        }
+    ]
+}

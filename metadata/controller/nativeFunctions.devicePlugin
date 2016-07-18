@@ -1,0 +1,37 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "nativeFunctions.devicePlugin"
+    },
+    "name": "MyController",
+    "designerId": "886ee04c-7ff5-4079-be8d-ce10e7ef2684",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "phoneData",
+                "implHandler": [
+                    "data = {",
+                    "    \"uuid\"\t\t\t: device.uuid,",
+                    "    \"platform\"\t\t: device.platform,",
+                    "    \"model\"\t\t\t: device.model,",
+                    "    \"manufacturer\"\t: device.manufacturer",
+                    "};",
+                    "return data;"
+                ]
+            },
+            "name": "phoneData",
+            "designerId": "a70d9b49-2521-4516-85e0-99fd9a6e061a"
+        }
+    ]
+}

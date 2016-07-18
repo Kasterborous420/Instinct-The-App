@@ -1,0 +1,42 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "buffered": true,
+        "clearOnPageLoad": false,
+        "designer|userAlias": "userSessionStore",
+        "designer|userClassName": "user.Session",
+        "model": "user.Session",
+        "storeId": "user.Session"
+    },
+    "name": "MyStore",
+    "designerId": "72e6fd83-23e9-46b1-9606-c51f8144ca4a",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "name": "MyAjaxProxy",
+            "designerId": "57afbe72-3a27-4d3a-abf3-cca43dbab50f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Array",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "name": "MyArrayReader",
+                    "designerId": "197efe24-60e9-4507-a50e-786d4378cd95"
+                }
+            ]
+        }
+    ]
+}

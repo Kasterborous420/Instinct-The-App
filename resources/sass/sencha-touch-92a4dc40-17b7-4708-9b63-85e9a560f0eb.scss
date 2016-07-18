@@ -1,0 +1,269 @@
+
+
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
+
+
+$black			: #0e0e0e;
+$grey			: #3c3c3c;
+$yellow			: #fbd208;
+
+/* disable loading indicator */
+#appLoadingIndicator {
+    display:none !important;
+    background-color:$black !important;
+    opacity: 0.1 !important;
+    -webkit-animation-duration: 0.1s !important;
+}
+
+
+/* SCROLLBAR FIX */
+.x-scroll-indicator.rounded > :nth-child(2) {
+    background: #333;
+    content: '';
+}
+
+/*HIER KOMT DE STATUSBAR PADDING*/
+.x-ios-7 .x-toolbar.x-docked-top,
+.x-ios-8 .x-toolbar.x-docked-top,
+.x-ios-9 .x-toolbar.x-docked-top,
+.x-ios-10 .x-toolbar.x-docked-top {
+    border-top:0px;
+    padding-top:15px;
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}
+
+.x-toolbar.x-docked-top.noPaddingTop {
+    padding-top:0px !important;
+}
+.mainMenuCss{
+    background-color: $black;
+}
+
+.instinctTitle .x-toolbar-label {
+    text-align:left;
+    font-family: Helvetica;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 200;
+}
+
+.menuIcon{
+    background-color:$grey;
+    width 		: 25px !important;
+    height		: 25px !important;
+    margin-top	: 12px !important;
+}
+
+.menuButtonHolder{
+    background-color: $grey;
+    border-bottom:3px solid $black;
+    height:50px;
+}
+.menuButton{
+    background:none;
+    border-radius:0;
+    border:none;
+    font-size:25px;
+    text-align:left;
+    color:#FFF;
+    font-family: Helvetica;
+}
+.x-button{
+    padding-left:3px !important;
+}
+.menuButton .x-button-label {
+    padding-left:3px !important;
+    text-align:left;
+    font-weight:200;
+    font-family: Helvetica;
+}
+
+.x-toolbar-dark {
+    background-image:none;
+    background-color:$yellow;
+    height:50px;
+    font-family: Helvetica;
+}
+
+.x-toolbar .x-title {
+    text-shadow:none;
+    font-family: Helvetica;
+    font-style: italic;
+    font-weight:normal;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+    min-width: 150%;
+    font-size:25px;
+
+}
+/*
+.x-menu .x-toolbar {
+    padding-left:0px;
+}
+
+.x-menu .x-toolbar .x-title {
+    margin:0px;
+    padding:12px 0px 13px 25px;
+}
+
+.x-toolbar.x-docked-top {
+    border: none;
+    border-bottom: none;
+    border-bottom-width: none;
+    border-bottom-style: none;
+}
+
+.x-ios-7 .x-toolbar.x-docked-top,
+.x-ios-8 .x-toolbar.x-docked-top,
+.x-ios-9 .x-toolbar.x-docked-top,
+.x-ios-10 .x-toolbar.x-docked-top {
+    border-top:0px;
+    padding-top:15px;
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}
+
+.x-ios-7 .statusbarPadding,
+.x-ios-8 .statusbarPadding,
+.x-ios-9 .statusbarPadding,
+.x-ios-10 .statusbarPadding {
+    padding-top:15px;
+}
+
+.x-picker .x-toolbar.x-docked-top{
+    border-top:none !important;
+    padding-top:0px !important;
+}
+
+.x-sheet, .x-picker, .x-sheet-action{
+    border-top:none;
+}
+
+.noPaddingTop {
+    padding-top:0px !important;
+}
+*/
+.introContainer{
+    background-color	: $black;
+    background-image	: url("../images/intro.gif") !important;
+    background-size		: 100% 100%;
+    background-repeat	: no-repeat;
+}
+
+
+.loginLabel{
+    background:$black;
+    color:#FFF;
+    text-align:center;
+    border-bottom:3px solid $grey;
+    border-top:3px solid $grey;
+}
+
+.loginButton{
+    background:$black;
+    border-radius:0;
+    border:none;
+    color:#FFF;
+    align:center;
+}
+
+.inputLogin .x-input-el.x-form-field {
+    border-radius:0px !important;
+    text-align:center !important;
+    background-color:$black !important;
+    font-family:oxygen !important;
+    color:#FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+.inputLogin .x-label-align-top:first-child .x-form-label {
+    border-radius:0px !important;
+    color:#FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.x-item-disabled.x-field-select .x-component-outer:after{
+    display:none;
+}
+.verifyView{
+    background:$black;
+    background-color:$black !important;
+}
+
+.verifyLabel{
+    background:$black;
+    color:#FFF;
+    text-align:center;
+    font-family: Helvetica;
+    font-style: normal;
+    font-size:15px;
+    font-variant: normal;
+    border:none;
+}
+
+.loginButton{
+    background:$grey;
+    border-radius:0;
+    border:none;
+    color:#FFF;
+    align:center;
+}
+
+.inputLogin .x-input-el.x-form-field {
+    border-radius:0px !important;
+    text-align:center !important;
+    background-color:$black !important;
+    font-family:oxygen !important;
+    color:#FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+.inputLogin .x-label-align-top:first-child .x-form-label {
+    border-radius:0px !important;
+    color:#FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+}
+
+.x-item-disabled.x-field-select .x-component-outer:after{
+    display:none;
+}
+.x-mask {
+    background-color:rgba(0,0,0,0.25);
+}
+
+.x-loading-mask .x-mask-inner {
+    border-radius:5px;
+    background-color:rgba(255,255,255,0.9);
+}
+
+.x-loading-mask .x-mask-message {
+    font-weight:300;
+    padding-bottom:10px;
+}
+.x-msgbox {
+    background:none;
+    border:none;
+    background-color:white;
+    color:$grey;
+    .x-title {
+        color:$grey;
+        font-family:oxygen;
+    }
+    .x-center {
+        display:none;
+    }
+    .x-button {
+        background:none !important;
+        background-color:$yellow !important;
+        padding:5px !important;
+        font-family:oxygen;
+    }
+}
+.x-msgbox-text {
+    color:$grey !important;
+    text-shadow:none !important;
+    font-family:oxygen;
+}

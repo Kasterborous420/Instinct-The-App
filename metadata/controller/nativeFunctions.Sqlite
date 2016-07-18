@@ -1,0 +1,299 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "nativeFunctions.Sqlite"
+    },
+    "name": "MyController",
+    "designerId": "c6de8721-480f-4fcc-9bc3-b1a1e8f81e76",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "query",
+                    "params",
+                    "callbackFn",
+                    "failureFn"
+                ],
+                "fn": "query",
+                "implHandler": [
+                    "if(typeof callbackFn !== 'function'){",
+                    "    callbackFn = function (e) {",
+                    "        console.log('Query success: '+query, params);",
+                    "    };",
+                    "}",
+                    "",
+                    "if(typeof failureFn !== 'function'){",
+                    "    failureFn = function (e) {",
+                    "        console.log(e.message, query, params);",
+                    "    };",
+                    "}",
+                    "",
+                    "sqlite.database.executeSql(",
+                    "    query,",
+                    "    params,",
+                    "    callbackFn,",
+                    "    failureFn",
+                    ");"
+                ]
+            },
+            "name": "query",
+            "designerId": "a3fde788-4e32-456c-8139-fd54f1552dac"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "result"
+                ],
+                "fn": "fetch",
+                "implHandler": [
+                    "var data = [];",
+                    "for (var index = 0; index < result.rows.length; index++) {",
+                    "    data.push(result.rows.item(index));",
+                    "}",
+                    "return data;"
+                ]
+            },
+            "name": "fetch",
+            "designerId": "59e1a404-2713-4d61-ba85-81bc9e1d6a60"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "tableName",
+                    "fieldNames",
+                    "fieldValues",
+                    "callbackFn",
+                    "failureFn"
+                ],
+                "fn": "getRows",
+                "implHandler": [
+                    "var queryFields = [];",
+                    "Ext.each(fieldNames, function(fieldName, index){",
+                    "    queryFields.push('`'+fieldName+'` = ?');",
+                    "});",
+                    "fields = queryFields.join(' AND ');",
+                    "",
+                    "if(fieldNames.length > 0){",
+                    "    whereString = \" WHERE \"+fields;",
+                    "} else {",
+                    "    whereString = '';",
+                    "}",
+                    "",
+                    "sqlite.query(",
+                    "    \"SELECT * FROM `\"+tableName+\"`\"+whereString,",
+                    "    fieldValues,",
+                    "    function(result){",
+                    "        if(result.rows.length > 0){",
+                    "            callbackFn(sqlite.fetch(result));",
+                    "        } else {",
+                    "            callbackFn(false);",
+                    "        }",
+                    "    },",
+                    "    failureFn",
+                    ");"
+                ]
+            },
+            "name": "getRows",
+            "designerId": "d88501d3-fbfd-410e-9add-b7865afa1020"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "name",
+                    "fieldNames",
+                    "fieldTypes",
+                    "callbackFn",
+                    "failureFn"
+                ],
+                "fn": "createTable",
+                "implHandler": [
+                    "var queryFields = [];",
+                    "",
+                    "Ext.each(fieldNames, function(fieldName, index){",
+                    "    if(fieldTypes[index]){",
+                    "        fieldType = fieldTypes[index];",
+                    "    } else {",
+                    "        fieldType = 'text';",
+                    "    }",
+                    "",
+                    "    queryFields.push('`'+fieldName+'` '+fieldType);",
+                    "});",
+                    "",
+                    "if(queryFields.length){",
+                    "    fields = ','+queryFields.join(', ');",
+                    "} else {",
+                    "    fields = '';",
+                    "}",
+                    "",
+                    "sqlite.query(",
+                    "    \"CREATE TABLE IF NOT EXISTS `\"+name+\"` (`id` INTEGER PRIMARY KEY\"+fields+\");\",",
+                    "    [],",
+                    "    callbackFn,",
+                    "    failureFn",
+                    ");"
+                ]
+            },
+            "name": "createTable",
+            "designerId": "1b53443d-2b93-4358-a75d-ee8b415c43b9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "tableName",
+                    "fieldNames",
+                    "fieldValues",
+                    "callbackFn",
+                    "failureFn"
+                ],
+                "fn": "insertRow",
+                "implHandler": [
+                    "var queryFields = [];",
+                    "",
+                    "Ext.each(fieldNames, function(fieldName, index){",
+                    "    queryFields.push('`'+fieldName+'`');",
+                    "});",
+                    "",
+                    "fields = queryFields.join(', ');",
+                    "",
+                    "var queryFields = [];",
+                    "Ext.each(fieldValues, function(fieldValue, index){",
+                    "    queryFields.push('?');",
+                    "});",
+                    "",
+                    "values = queryFields.join(', ');",
+                    "sqlite.query(",
+                    "    \"INSERT INTO `\"+tableName+\"` (\"+fields+\") VALUES (\"+values+\");\",",
+                    "    fieldValues,",
+                    "    function(result){",
+                    "        callbackFn(result.insertId);",
+                    "    },",
+                    "    failureFn",
+                    ");"
+                ]
+            },
+            "name": "insertRow",
+            "designerId": "e981b91e-c7d6-46b8-a0a8-c51ea68b3648"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "tableName",
+                    "rowId",
+                    "fieldNames",
+                    "fieldValues",
+                    "callbackFn",
+                    "failureFn"
+                ],
+                "fn": "updateRow",
+                "implHandler": [
+                    "var queryFields = [];",
+                    "",
+                    "Ext.each(fieldNames, function(fieldName, index){",
+                    "    queryFields.push('`'+fieldName+'` = ?');",
+                    "});",
+                    "",
+                    "fields = queryFields.join(', ');",
+                    "",
+                    "fieldValues.push(rowId);",
+                    "",
+                    "sqlite.query(",
+                    "    \"UPDATE `\"+tableName+\"` SET \"+fields+\" WHERE `id` = ?;\",",
+                    "    fieldValues,",
+                    "    function(){",
+                    "        callbackFn(rowId);",
+                    "    },",
+                    "    failureFn",
+                    ");"
+                ]
+            },
+            "name": "updateRow",
+            "designerId": "7882094b-20e2-4c13-bc07-4b470cc93287"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "callbackFn"
+                ],
+                "fn": "openDatabase",
+                "implHandler": [
+                    "if(window.cordova && window.sqlitePlugin){",
+                    "    Ext.define('sqlite', {",
+                    "        singleton: true,",
+                    "",
+                    "        insertRow: this.insertRow,",
+                    "        updateRow: this.updateRow,",
+                    "        getRows: this.getRows,",
+                    "        query: this.query,",
+                    "        createTable: this.createTable,",
+                    "        fetch: this.fetch",
+                    "    });",
+                    "    window.sqlitePlugin.openDatabase({",
+                    "        name: \"database.sqlite\",",
+                    "        location: 2,",
+                    "        androidDatabaseImplementation: 2",
+                    "    }, function(db){",
+                    "        sqlite.database = db;",
+                    "        callbackFn();",
+                    "    });",
+                    "} else {",
+                    "    console.log('ERROR: SQLITE PLUGIN NOT FOUND!');",
+                    "    if(window.cordova){",
+                    "        Ext.Msg.alert(false, 'ERROR: SQLITE PLUGIN NOT FOUND!');",
+                    "    }",
+                    "    callbackFn();",
+                    "}",
+                    ""
+                ]
+            },
+            "name": "openDatabase",
+            "designerId": "970b397f-a930-4c28-bc5b-a6ed0b8fa2de"
+        }
+    ]
+}

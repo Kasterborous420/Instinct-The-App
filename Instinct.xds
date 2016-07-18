@@ -1,0 +1,73 @@
+{
+    "name": "Instinct",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "6.1.3.42",
+            "frameworkVersion": "2.4.2.571"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPhone 5",
+                "builtIn": true,
+                "height": 568,
+                "width": 320
+            },
+            "viewportOrientation": "portrait"
+        },
+        "urlPrefix": "http://localhost:1337/",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "installStatus": "Not Installed"
+    },
+    "xdsVersion": "3.5.1",
+    "xdsBuild": 348,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "touch24",
+    "viewOrderMap": {
+        "view": [
+            "e8bf0248-3b97-4afd-961a-2aecb35e073b",
+            "891305af-28c3-48d0-8424-090c6b102e24",
+            "b8715daf-c596-406d-a7f4-b064083ace0a",
+            "d1c7d7e6-d471-4d22-983e-a9663f3b64d3",
+            "08cf1b0b-6488-4ee6-ab7a-b1da8d3ddcce",
+            "7cc41e00-ab02-45e6-ac84-ec16a43bec64",
+            "db1d4a5b-2ebb-405c-a084-7ec3ac384083"
+        ],
+        "store": [
+            "72e6fd83-23e9-46b1-9606-c51f8144ca4a"
+        ],
+        "controller": [
+            "281224ab-8461-4b2e-9888-353e3182bb15",
+            "53e1475f-3cfb-49f1-b8bd-4ec591764cfa",
+            "f483faa6-3e39-48e8-aadf-3b50d675ed9c",
+            "886ee04c-7ff5-4079-be8d-ce10e7ef2684",
+            "c2905ba6-8481-4891-adb5-a3f6da4bda8d",
+            "6390d860-97f0-4164-a76b-7733bc2cd053",
+            "2577e9f5-7814-4c43-a71e-e695d13567b9",
+            "c6de8721-480f-4fcc-9bc3-b1a1e8f81e76",
+            "7b7ea38e-af3b-428f-99a3-5d55d1641cef",
+            "c41f3b7e-fe1d-4de1-ab39-27fab27008c0",
+            "3bfeeb78-9af5-4e79-98ed-91ce6aa6c73f",
+            "cca824ed-6c11-4088-bf49-9e630399b2c5",
+            "b5448e25-4c4b-4be8-828d-9095d6a22c86"
+        ],
+        "model": [
+            "73ed06ac-dcfa-4560-abd0-2e28ec586d78"
+        ],
+        "resource": [
+            "82da3b1e-2a17-4d60-972e-6d7d2cfca4d3",
+            "92a4dc40-17b7-4708-9b63-85e9a560f0eb"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

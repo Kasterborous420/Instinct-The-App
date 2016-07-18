@@ -1,0 +1,133 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "user.Register"
+    },
+    "name": "MyController",
+    "designerId": "6390d860-97f0-4164-a76b-7733bc2cd053",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "userRegister button#registerButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onRegisterTap",
+                "implHandler": [
+                    "var check \t\t= Instinct.app.getController('nativeFunctions.cordova').cordovaCheck();",
+                    "var username \t= button.up(\"userRegister\").down('textfield[name=username]').getValue();",
+                    "var email \t\t= button.up(\"userRegister\").down('textfield[name=email]').getValue();",
+                    "var password \t= button.up(\"userRegister\").down('textfield[name=password]').getValue();",
+                    "",
+                    "Ext.Viewport.setMasked({",
+                    "    xtype: 'loadmask',",
+                    "    message: 'Loading...'",
+                    "});",
+                    "",
+                    "var successCallback = function(resp, ops) {",
+                    "    Ext.Viewport.unmask();",
+                    "    setTimeout(function(){",
+                    "        if(resp.status === 200){",
+                    "            var responseData = Ext.JSON.decode(resp.responseText);",
+                    "            if(responseData.success === true){",
+                    "                nav = button.up(\"navigationview\");",
+                    "                nav.pop();",
+                    "                Ext.Msg.alert(false, responseData.successText);",
+                    "            }else{",
+                    "                Ext.Msg.alert(false, responseData.errorText);",
+                    "            }",
+                    "        }else{",
+                    "            Ext.Msg.alert(false, \"Register server down, Please try again later!\");",
+                    "        }",
+                    "    },250);",
+                    "};",
+                    "",
+                    "var failureCallback = function(resp, ops) {",
+                    "    Ext.Viewport.unmask();",
+                    "    Ext.Msg.alert(\"Register Failure\", resp);",
+                    "};",
+                    "",
+                    "if(username !== \"\" && password !== \"\" && email !== \"\"){",
+                    "    if(check === true){",
+                    "        var data \t= Instinct.app.getController('nativeFunctions.devicePlugin').phoneData();",
+                    "        Ext.Ajax.request({",
+                    "            url: \"http://iriks-it.nl/PokemonGo/Instinct/modules/authentication/register.php\",",
+                    "            disableCaching: false,",
+                    "            headers: {",
+                    "                \"Content-Type\": \"application/json\"",
+                    "            },",
+                    "            method: 'POST',",
+                    "            jsonData: {",
+                    "                \"username\"\t\t: username,",
+                    "                \"password\"\t\t: password,",
+                    "                \"email\"\t\t\t: email,",
+                    "                \"uuid\"\t\t\t: data.uuid,",
+                    "                \"platform\"\t\t: data.platform,",
+                    "                \"model\"\t\t\t: data.model,",
+                    "                \"manufacturer\"\t: data.manufacturer",
+                    "            },",
+                    "            success: successCallback,",
+                    "            failure: failureCallback",
+                    "        });",
+                    "    }else{",
+                    "        Ext.Ajax.request({",
+                    "            url: \"http://iriks-it.nl/PokemonGo/Instinct/modules/authentication/register.php\",",
+                    "            disableCaching: false,",
+                    "            headers: {",
+                    "                \"Content-Type\": \"application/json\"",
+                    "            },",
+                    "            method: 'POST',",
+                    "            jsonData: {",
+                    "                \"username\"\t\t: username,",
+                    "                \"password\"\t\t: password,",
+                    "                \"email\"\t\t\t: email,",
+                    "                \"uuid\"\t\t\t: 'Unknown',",
+                    "                \"platform\"\t\t: 'Unknown',",
+                    "                \"model\"\t\t\t: 'Unknown',",
+                    "                \"manufacturer\"\t: 'Unknown'",
+                    "            },",
+                    "            success: successCallback,",
+                    "            failure: failureCallback",
+                    "        });",
+                    "    }",
+                    "}else{",
+                    "    Ext.Viewport.unmask();",
+                    "    Ext.Msg.alert(false, \"Please fill in the form\");",
+                    "}"
+                ],
+                "name": "tap"
+            },
+            "name": "onRegisterTap",
+            "designerId": "81b00c5f-d43e-408b-9f29-428ab48b87df"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "userRegister button#cancelButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onCancelTap",
+                "implHandler": [
+                    "nav = button.up(\"navigationview\");",
+                    "nav.pop();"
+                ],
+                "name": "tap"
+            },
+            "name": "onCancelTap",
+            "designerId": "682964c8-defe-4969-93ee-f7986cca4856"
+        }
+    ]
+}

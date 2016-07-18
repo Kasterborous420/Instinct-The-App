@@ -1,0 +1,499 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "mainMenuCss"
+        ],
+        "designer|userAlias": "mainMenu",
+        "designer|userClassName": "main.Menu",
+        "requires": [
+            "Ext.TitleBar",
+            "Ext.Button"
+        ],
+        "scrollable": "vertical"
+    },
+    "name": "MyPanel3",
+    "designerId": "d1c7d7e6-d471-4d22-983e-a9663f3b64d3",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "instinctTitle"
+                ],
+                "docked": "top",
+                "title": "Team Instinct App"
+            },
+            "name": "MyTitleBar",
+            "designerId": "5ae6643d-90b2-44c9-abdb-54e2197046fa"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "MenuItemsHolder",
+                "layout": "vbox",
+                "style": "border-top:1px solid #0e0e0e;border-bottom:1px solid #0e0e0e;"
+            },
+            "name": "MyContainer1",
+            "designerId": "4e546c95-0f9b-4a17-a52b-a07d5dbaab33",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": null,
+                        "cls": [
+                            "menuButtonHolder"
+                        ],
+                        "itemId": "profileHolder",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer2",
+                    "designerId": "35bdf9b7-0056-4dcb-aad2-39755bd8107c",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuIcon"
+                                ],
+                                "designer|displayName": "icon",
+                                "src": "resources/images/icons/profile.png",
+                                "width": 50
+                            },
+                            "name": "MyImg1",
+                            "designerId": "d867d8a2-0dcb-4005-8047-7bb038fdf60a"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuButton"
+                                ],
+                                "itemId": "profile",
+                                "layout|flex": 1,
+                                "text": "Profile"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "d0cf1a1d-c6ee-4e6d-9e1e-2efa5b6ed3da"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "menuButtonHolder"
+                        ],
+                        "itemId": "mapHolder",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer4",
+                    "designerId": "37670008-e3b8-4676-a4f1-382f446be24b",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuIcon"
+                                ],
+                                "designer|displayName": "icon",
+                                "src": "resources/images/icons/map.png",
+                                "width": 50
+                            },
+                            "name": "MyImg2",
+                            "designerId": "9cd090e2-f78d-448c-bac7-8d2ab6cd3646"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuButton"
+                                ],
+                                "itemId": "Map",
+                                "layout|flex": 1,
+                                "text": "Map"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "25293ecf-9d18-4b2d-8664-8a6ede3babfb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "menuButtonHolder"
+                        ],
+                        "itemId": "inventoryHolder",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer5",
+                    "designerId": "b6e97293-b44f-4011-be1d-52a080df3397",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuIcon"
+                                ],
+                                "designer|displayName": "icon",
+                                "src": "resources/images/icons/inventory.png",
+                                "width": 50
+                            },
+                            "name": "MyImg3",
+                            "designerId": "f9d6c173-657c-48a4-89e8-84383fe6a242"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuButton"
+                                ],
+                                "itemId": "inventory",
+                                "layout|flex": 1,
+                                "text": "Inventory"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "03ec496c-3328-4765-a6f3-7797d2fd1acd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "menuButtonHolder"
+                        ],
+                        "itemId": "friendsHolder",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer6",
+                    "designerId": "f7882295-babe-434e-8dfd-72c9f69dc6a2",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuIcon"
+                                ],
+                                "designer|displayName": "icon",
+                                "src": "resources/images/icons/friends.png",
+                                "width": 50
+                            },
+                            "name": "MyImg4",
+                            "designerId": "72f17521-58a7-49b2-9f1d-fb84f9ba31c4"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuButton"
+                                ],
+                                "itemId": "friends",
+                                "layout|flex": 1,
+                                "text": "Friends"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "b0097912-0d63-4828-8fd1-be9aa4576664"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "menuButtonHolder"
+                        ],
+                        "itemId": "chatHolder",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer7",
+                    "designerId": "7bd0f069-07b2-43a8-aab6-cbc9ea449563",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuIcon"
+                                ],
+                                "designer|displayName": "icon",
+                                "src": "resources/images/icons/chat.png",
+                                "width": 50
+                            },
+                            "name": "MyImg5",
+                            "designerId": "70a37026-e5b7-456f-89b3-2f987878e9e0"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuButton"
+                                ],
+                                "itemId": "chat",
+                                "layout|flex": 1,
+                                "text": "Chat"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "90c0b124-554f-4556-98da-32a49ad9d3b6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "menuButtonHolder"
+                        ],
+                        "itemId": "messagesHolder",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer8",
+                    "designerId": "5cc472fa-defc-447a-a7f3-ed05bbdb258a",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuIcon"
+                                ],
+                                "designer|displayName": "icon",
+                                "src": "resources/images/icons/messages.png",
+                                "width": 50
+                            },
+                            "name": "MyImg8",
+                            "designerId": "2b4b5f11-fbf9-46ac-879c-d03f8ce7ae51"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuButton"
+                                ],
+                                "itemId": "messages",
+                                "layout|flex": 1,
+                                "text": "Messages"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "73be2d0b-6148-4440-b059-79dad6a44030"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "menuButtonHolder"
+                        ],
+                        "itemId": "settingsHolder",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer9",
+                    "designerId": "cada6ae0-f7ba-4a90-badf-5d681ef8e021",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuIcon"
+                                ],
+                                "designer|displayName": "icon",
+                                "src": "resources/images/icons/settings.png",
+                                "width": 50
+                            },
+                            "name": "MyImg7",
+                            "designerId": "d9d4c983-f966-46cf-a70a-55dd38465f12"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuButton"
+                                ],
+                                "itemId": "settings",
+                                "layout|flex": 1,
+                                "text": "Settings"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "4d577566-80ae-4cef-af28-24749cc7b0ca"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "menuButtonHolder"
+                        ],
+                        "itemId": "LogoutHolder",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer10",
+                    "designerId": "2f1ba484-8399-4527-b5f2-812aa3d7da5a",
+                    "cn": [
+                        {
+                            "type": "Ext.Img",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuIcon"
+                                ],
+                                "designer|displayName": "icon",
+                                "src": "resources/images/icons/logout.png",
+                                "width": 50
+                            },
+                            "name": "MyImg6",
+                            "designerId": "441d2536-d6f8-4731-b013-9cd525d9bae8"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "menuButton"
+                                ],
+                                "itemId": "logout",
+                                "layout|flex": 1,
+                                "text": "Logout"
+                            },
+                            "name": "MyButton4",
+                            "designerId": "69102ebb-af37-4ee5-bfbd-a4bc5b464e9c"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

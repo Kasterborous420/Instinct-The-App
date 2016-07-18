@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "nativeFunctions.cordova"
+    },
+    "name": "MyController",
+    "designerId": "53e1475f-3cfb-49f1-b8bd-4ec591764cfa",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "cordovaCheck",
+                "implHandler": [
+                    "if (window.Cordova) {",
+                    "    return true;",
+                    "}else{",
+                    "    return false;",
+                    "}"
+                ]
+            },
+            "name": "cordovaCheck",
+            "designerId": "c1b3ea41-1db3-40ea-bff9-da0d81133d17"
+        }
+    ]
+}

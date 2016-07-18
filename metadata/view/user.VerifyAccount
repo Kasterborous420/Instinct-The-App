@@ -1,0 +1,178 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "verifyView"
+        ],
+        "designer|userAlias": "userUploadProfile",
+        "designer|userClassName": "user.VerifyAccount",
+        "requires": [
+            "Ext.TitleBar",
+            "Ext.Img",
+            "Ext.Button"
+        ],
+        "scrollable": null,
+        "style": null
+    },
+    "name": "user.Login1",
+    "designerId": "b8715daf-c596-406d-a7f4-b064083ace0a",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom",
+                "height": "100%",
+                "hidden": false,
+                "itemId": "verifyInfoText",
+                "maxHeight": "100%",
+                "minHeight": "100%",
+                "scrollable": "vertical",
+                "style": null
+            },
+            "name": "MyContainer",
+            "designerId": "fc66476f-01fd-44ff-85d5-879b3bece7d8",
+            "cn": [
+                {
+                    "type": "Ext.Img",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": 250,
+                        "src": "resources/images/verification.jpg",
+                        "style": "background-size:contain;"
+                    },
+                    "name": "MyImg",
+                    "designerId": "4c6e8f29-a879-4d22-a08a-a541e1cec296"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "verifyLabel"
+                        ],
+                        "designer|displayName": "infoText",
+                        "html": "<br>This app is for Team Instinct only <br><br>To make sure of that, we run a manual check on the date your about to send us. <br><br>Please take a screenshot of your profile. <br><br>Make sure to include the following data:<br> Name, Level, Team & Start date"
+                    },
+                    "name": "MyContainer11",
+                    "designerId": "1a4aaea1-cd06-4680-93fb-2dc985157ee7"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "loginButton"
+                        ],
+                        "itemId": "showUploadForm",
+                        "margin": 20,
+                        "padding": 8,
+                        "text": "I GOT THIS!"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "2c0bb8a9-6596-4529-9ae2-5c9d5b40cd8c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom",
+                "height": "100%",
+                "hidden": true,
+                "itemId": "verifyInfoUpload",
+                "maxHeight": "100%",
+                "minHeight": "100%",
+                "scrollable": "vertical"
+            },
+            "name": "MyContainer1",
+            "designerId": "d9088a58-5383-41bc-b967-7777603c2afb",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": null,
+                        "hidden": true,
+                        "itemId": "sendPicture",
+                        "text": "submit"
+                    },
+                    "name": "MyButton6",
+                    "designerId": "33121ffe-5c26-4e31-896b-4f1c6fa48deb"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "preview"
+                    },
+                    "name": "MyContainer13",
+                    "designerId": "81307dd7-4d30-4e8c-9651-715fa47320fa"
+                },
+                {
+                    "type": "Ext.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "baseString",
+                        "name": "baseString"
+                    },
+                    "name": "MyHiddenField",
+                    "designerId": "2d78fcf2-1346-4c56-8643-e597ced35513"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": true,
+                        "itemId": "importPicture",
+                        "text": "import"
+                    },
+                    "name": "MyButton5",
+                    "designerId": "a17cce8a-a189-42a0-883b-c88634425671"
+                }
+            ]
+        }
+    ]
+}

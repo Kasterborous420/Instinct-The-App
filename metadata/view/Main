@@ -1,0 +1,132 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "instinctMain",
+        "designer|userClassName": "Main",
+        "requires": [
+            "Ext.TitleBar",
+            "Ext.Img",
+            "Ext.Button"
+        ],
+        "style": "background-color: #000;"
+    },
+    "name": "MyPanel4",
+    "designerId": "e8bf0248-3b97-4afd-961a-2aecb35e073b",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 150,
+                "src": "resources/images/login.jpg",
+                "style": "background-size:contain;"
+            },
+            "name": "MyImg",
+            "designerId": "4b1ffdd7-ff12-42bd-b713-4633d7621283"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "loginPanel",
+                "style": null
+            },
+            "name": "MyContainer",
+            "designerId": "aa913960-da6f-441a-8054-e5ccde7987c4",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "loginForm",
+                        "style": null,
+                        "title": null
+                    },
+                    "name": "MyFieldSet",
+                    "designerId": "9f469957-5eb3-4015-afa7-aa06e968f58a",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Username",
+                                "labelWidth": "40%",
+                                "name": "username"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "993768d2-880a-47bd-b1cd-abd256b4795c"
+                        },
+                        {
+                            "type": "Ext.field.Password",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "label": "Password",
+                                "labelWidth": "40%",
+                                "name": "password"
+                            },
+                            "name": "MyPasswordField1",
+                            "designerId": "ed11b1e7-37ae-485f-a7fe-ee06690cbb76"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "loginButton",
+                        "margin": 20,
+                        "padding": 8,
+                        "text": "Login"
+                    },
+                    "name": "MyButton",
+                    "designerId": "165fcac7-2a2f-4427-9de6-8bb50444905b"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "showRegisterButton",
+                        "margin": 20,
+                        "padding": 8,
+                        "text": "Or register here"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "87d07c59-f761-4de5-ab26-d2d9f9d82c05"
+                }
+            ]
+        }
+    ]
+}

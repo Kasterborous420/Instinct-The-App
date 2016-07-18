@@ -24,7 +24,7 @@ Ext.application({
     requires: [
         'Ext.MessageBox'
     ],
-    appVersion: 'Alpha_0.10',
+    appVersion: 'Alpha_0.11',
     models: [
         'user.Session'
     ],
@@ -140,24 +140,6 @@ Ext.application({
                 });
             });
         });
-
-
-        /*
-            var serverFunc 		= Instinct.app.getController("server.checkPlayerData");
-            if(sessionStore.getCount() === 0){
-                newActiveItem = Ext.widget('instinctMain');
-            }else{
-                serverFunc.checkToken(function(result){
-                    if(result === true){
-                        newActiveItem = Ext.widget('mainMenu');
-                    }else{
-                        newActiveItem = Ext.widget('instinctMain');
-                    }
-                });
-            }
-            hideSplashScreen();
-            viewport.add(newActiveItem);
-            */
     }
 
 });

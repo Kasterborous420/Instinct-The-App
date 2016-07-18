@@ -17,5 +17,33 @@ Ext.define('Instinct.controller.main.Menu', {
     extend: 'Ext.app.Controller',
 
     config: {
+        control: {
+            "mainMenu button": {
+                tap: 'onMenuButtonTap'
+            }
+        }
+    },
+
+    onMenuButtonTap: function(button, e, eOpts) {
+        navigationview = button.up('navigationview');
+        viewport = button.up("mainViewport");
+
+        if(button.getItemId() !== "logout"){
+            //pageToOpen = Ext.widget(button.getItemId());
+            Ext.Msg.alert(false, 'This option is not yet available in this version');
+            //navigationview.push(pageToOpen);
+        } else {
+            Ext.Msg.confirm(false,"Are you sure you want to log out?",checkButton);
+            function checkButton(btn) {
+                if(btn == "yes") {
+                    var controller = Instinct.app.getController("client.settings");
+                    controller.removeAll(function(serverVersion){
+                        nav = button.up('navigationview');
+                        nav.pop();
+                    });
+                }
+            }
+        }
     }
+
 });

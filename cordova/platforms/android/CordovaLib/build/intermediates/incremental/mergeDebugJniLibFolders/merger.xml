@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Iriks-IT\Apps\PokemonGo-Instinct\Instinct\cordova\platforms\android\CordovaLib\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Iriks-IT\Apps\PokemonGo-Instinct\Instinct\cordova\platforms\android\CordovaLib\src\debug\jniLibs"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Iriks-IT\Apps\PokemonGo-Instinct\Instinct-The-App\cordova\platforms\android\CordovaLib\src\main\jniLibs"/></dataSet><dataSet config="debug"><source path="C:\Iriks-IT\Apps\PokemonGo-Instinct\Instinct-The-App\cordova\platforms\android\CordovaLib\src\debug\jniLibs"/></dataSet></merger>

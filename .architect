@@ -382,7 +382,12 @@
             ]
         },
         "c41f3b7e-fe1d-4de1-ab39-27fab27008c0": {
-            "id": "c41f3b7e-fe1d-4de1-ab39-27fab27008c0"
+            "id": "c41f3b7e-fe1d-4de1-ab39-27fab27008c0",
+            "cn": [
+                {
+                    "id": "d5436a7f-15f0-496d-a7fc-86c082aa7a32"
+                }
+            ]
         },
         "3bfeeb78-9af5-4e79-98ed-91ce6aa6c73f": {
             "id": "3bfeeb78-9af5-4e79-98ed-91ce6aa6c73f",
@@ -459,7 +464,9 @@
             "891305af-28c3-48d0-8424-090c6b102e24",
             "6390d860-97f0-4164-a76b-7733bc2cd053",
             "08cf1b0b-6488-4ee6-ab7a-b1da8d3ddcce",
-            "e8bf0248-3b97-4afd-961a-2aecb35e073b"
+            "e8bf0248-3b97-4afd-961a-2aecb35e073b",
+            "c41f3b7e-fe1d-4de1-ab39-27fab27008c0",
+            "2577e9f5-7814-4c43-a71e-e695d13567b9"
         ]
     },
     "canvasState": {

@@ -111,6 +111,9 @@ Ext.define('Instinct.controller.client.settings', {
     removeAll: function(callbackFn) {
         if (window.sqlitePlugin) {
             sqlite.query("DELETE FROM Settings", [], function(result){ callbackFn(); });
+        }else{
+            window.localStorage.clear();
+            callbackFn();
         }
     },
 

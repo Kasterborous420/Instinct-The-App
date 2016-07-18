@@ -22,15 +22,10 @@ Ext.Loader.setConfig({
 Ext.application({
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox',
+        'Ext.Ajax'
     ],
     appVersion: 'Alpha_0.11',
-    models: [
-        'user.Session'
-    ],
-    stores: [
-        'user.Session'
-    ],
     views: [
         'main.Menu',
         'mainViewport',
@@ -38,7 +33,8 @@ Ext.application({
         'intro.Main',
         'user.VerifyAccount',
         'user.Register',
-        'user.Login'
+        'user.Login',
+        'user.Settings'
     ],
     controllers: [
         'user.Login',
@@ -58,7 +54,8 @@ Ext.application({
     name: 'Instinct',
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox',
+        'Ext.Ajax'
     ],
 
     launch: function() {
@@ -81,7 +78,6 @@ Ext.application({
         var createTables = function(callbackFn){
             Instinct.app.getController('client.database').createTables(callbackFn);
         };
-
 
         var openIntro	= function(callbackFn){
             if(typeof navigator !== 'undefined' && typeof navigator.splashscreen !== 'undefined'){

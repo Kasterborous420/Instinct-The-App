@@ -1,0 +1,93 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "settingsController"
+        ],
+        "designer|userAlias": "settings",
+        "designer|userClassName": "user.Settings",
+        "requires": [
+            "Ext.TitleBar",
+            "Ext.Img",
+            "Ext.Button"
+        ],
+        "scrollable": "vertical",
+        "style": null
+    },
+    "name": "user.Register1",
+    "designerId": "ab047216-ec39-4195-9f88-cce314e17955",
+    "cn": [
+        {
+            "type": "Ext.TitleBar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": "instinctTitleBack",
+                "docked": "top",
+                "items": [
+                    "{",
+                    "xtype: 'button',",
+                    "cls: 'backButton',",
+                    "itemId: 'backToMenu',",
+                    "html: 'Back'",
+                    "}"
+                ],
+                "style": null,
+                "title": "Settings"
+            },
+            "name": "MyTitleBar1",
+            "designerId": "91bac476-95a4-43ec-b004-a56350b962a1"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "settingsPanel"
+                ],
+                "height": "100%",
+                "itemId": "settingsPanel",
+                "maxHeight": "100%",
+                "minHeight": "100%",
+                "scrollable": null,
+                "style": null
+            },
+            "name": "MyContainer",
+            "designerId": "8f5e759a-2b2d-4b60-9fc4-319dcfce94e3",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "saveButton"
+                        ],
+                        "docked": "bottom",
+                        "itemId": "saveButton",
+                        "margin": 20,
+                        "padding": 8,
+                        "text": "SAVE"
+                    },
+                    "name": "MyButton",
+                    "designerId": "ff7f76f8-ab54-4d9e-8d5e-cbec235c6bd7"
+                }
+            ]
+        }
+    ]
+}

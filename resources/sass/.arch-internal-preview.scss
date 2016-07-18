@@ -97,11 +97,52 @@ $yellow			: #fbd208;
     font-weight:normal;
     text-transform: uppercase;
     color: white;
-    text-shadow: 2px 2px 4px #000000;
-    min-width: 150%;
-    font-size:25px;
+    text-shadow: 2px 2px 4px #000000 !important;
+    width: 100% !important;
+    font-size:25px !important;
+    text-align:center !important;
+    overflow: visible !important;
+
 
 }
+
+.backButton {
+    background:none;
+    background-color:$grey;
+    color:white;
+    border:1px solid $yellow;
+    left: 5px !important;
+    text-align:center !important;
+    font-size:15px !important;
+    .x-button-label{
+        padding-left: 5px !important;
+    }
+}
+
+
+.instinctTitleBack{
+    height:50px;
+    background-image:none;
+    background-color:$yellow;
+    font-family: Helvetica;
+    font-style: italic;
+    font-weight:normal;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 2px 2px 4px #000000 !important;
+    width: 100% !important;
+    font-size:20px !important;
+    text-align:center !important;
+    overflow: visible !important;
+    .x-title {
+        .x-innerhtml{
+            overflow: visible !important;
+            text-overflow: initial !important;
+            white-space: normal !important;
+        }
+    }
+}
+
 /*
 .x-menu .x-toolbar {
     padding-left:0px;
@@ -191,6 +232,17 @@ $yellow			: #fbd208;
 .x-item-disabled.x-field-select .x-component-outer:after{
     display:none;
 }
+.settingsController{
+    background:$black;
+}
+
+.settingsPanel{
+    background:$black;
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: 100% !important;
+}
+
 .loginLabel{
     background:$black;
     color:#FFF;
@@ -199,8 +251,8 @@ $yellow			: #fbd208;
     border-top:3px solid $grey;
 }
 
-.loginButton{
-    background:$black;
+.saveButton{
+    background:$grey;
     border-radius:0;
     border:none;
     color:#FFF;
@@ -301,4 +353,73 @@ $yellow			: #fbd208;
     color:$grey !important;
     text-shadow:none !important;
     font-family:oxygen;
+}
+.x-toggle-thumb-iosthumb{
+    position:relative;
+    margin:0.5em 0 0 0;
+    text-align:center;
+    font-size: 0.9em;
+    font-weight :bold;
+}
+
+
+.x-iostoggle-on .x-toggle-thumb-iosthumb{
+    color:white;
+    text-shadow:#062547 0 -1px 0;
+}
+
+
+.x-iostoggle-off .x-toggle-thumb-iosthumb{
+    color :  #666;
+    text-shadow:#FFFFFF 0 1px 0;
+}
+
+
+.x-field-toggle .x-slider.x-iostoggle-off .x-field-toggle .x-slider.x-iostoggle-on{
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    border: #777 1px solid;
+    width: 80px;
+    position: relative;
+    height: 32px;
+}
+
+
+.x-field-toggle .x-slider.x-iostoggle-off .x-field-toggle .x-slider.x-iostoggle-on{
+    //background: -webkit-gradient(linear,left bottom,left top,color-stop(0.5, #EBEBEB),color-stop(.8, #D6D6D6), color-stop(1,#A2A2A2));
+    border:#777 1px solid;
+   -webkit-box-shadow:#CCC 0 0 2px;
+}
+
+
+.x-iostoggle-off .x-thumb::before .x-iostoggle-on .x-thumb::before {
+    content: "";
+    position: absolute;
+    width: 2.2em;
+    height: 1.650em;
+    top: 0em !important;
+    left: 0em !important;
+    -webkit-border-radius: 0.925em;
+    border-radius:3px;
+    -webkit-background-clip: padding;
+    background-clip: padding-box;
+
+}
+.x-iostoggle-off .x-thumb::before {
+    border:1px solid #E5E5E5;
+    background-color: white;
+    //background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A1A1A1), to(white));
+    //background-image: linear-gradient(white,#A1A1A1 2%,#white);
+    -webkit-box-shadow:#222 0 0 3px;
+}
+
+
+.x-iostoggle-on .x-thumb::before {
+    border:1px solid #14539C;
+    background-color: #14539C;
+    //background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#14539C), to(#3095C7));
+    //background-image: linear-gradient(white,#14539C 2%,#3095C7);
+    -webkit-box-shadow:#05203F 0 0 3px;
 }

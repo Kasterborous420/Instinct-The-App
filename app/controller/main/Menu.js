@@ -20,6 +20,9 @@ Ext.define('Instinct.controller.main.Menu', {
         control: {
             "mainMenu button": {
                 tap: 'onMenuButtonTap'
+            },
+            "button#backToMenu": {
+                tap: 'onBackToMenuButtonTap'
             }
         }
     },
@@ -29,9 +32,9 @@ Ext.define('Instinct.controller.main.Menu', {
         viewport = button.up("mainViewport");
 
         if(button.getItemId() !== "logout"){
-            //pageToOpen = Ext.widget(button.getItemId());
-            Ext.Msg.alert(false, 'This option is not yet available in this version');
-            //navigationview.push(pageToOpen);
+            pageToOpen = Ext.widget(button.getItemId());
+            //Ext.Msg.alert(false, 'This option is not yet available in this version');
+            navigationview.push(pageToOpen);
         } else {
             Ext.Msg.confirm(false,"Are you sure you want to log out?",checkButton);
             function checkButton(btn) {
@@ -44,6 +47,11 @@ Ext.define('Instinct.controller.main.Menu', {
                 }
             }
         }
+    },
+
+    onBackToMenuButtonTap: function(button, e, eOpts) {
+        navigationview = button.up('navigationview');
+        navigationview.pop();
     }
 
 });

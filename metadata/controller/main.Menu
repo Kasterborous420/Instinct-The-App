@@ -27,9 +27,9 @@
                     "viewport = button.up(\"mainViewport\");",
                     "",
                     "if(button.getItemId() !== \"logout\"){",
-                    "    //pageToOpen = Ext.widget(button.getItemId());",
-                    "    Ext.Msg.alert(false, 'This option is not yet available in this version');",
-                    "    //navigationview.push(pageToOpen);",
+                    "    pageToOpen = Ext.widget(button.getItemId());",
+                    "    //Ext.Msg.alert(false, 'This option is not yet available in this version');",
+                    "    navigationview.push(pageToOpen);",
                     "} else {",
                     "    Ext.Msg.confirm(false,\"Are you sure you want to log out?\",checkButton);",
                     "    function checkButton(btn) {",
@@ -47,6 +47,26 @@
             },
             "name": "onMenuButtonTap",
             "designerId": "d5436a7f-15f0-496d-a7fc-86c082aa7a32"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#backToMenu",
+                "designer|targetType": "Ext.Button",
+                "fn": "onBackToMenuButtonTap",
+                "implHandler": [
+                    "navigationview = button.up('navigationview');",
+                    "navigationview.pop();"
+                ],
+                "name": "tap"
+            },
+            "name": "onBackToMenuButtonTap",
+            "designerId": "670d9799-b6dc-4651-b431-c1c6a916cb8b"
         }
     ]
 }

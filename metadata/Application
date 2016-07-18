@@ -22,17 +22,12 @@
             "server.sendData",
             "user.Verify"
         ],
-        "models": [
-            "user.Session"
-        ],
         "name": "Instinct",
         "requires": [
-            "Ext.MessageBox"
+            "Ext.MessageBox",
+            "Ext.Ajax"
         ],
         "startupImage": null,
-        "stores": [
-            "user.Session"
-        ],
         "views": [
             "main.Menu",
             "mainViewport",
@@ -40,7 +35,8 @@
             "intro.Main",
             "user.VerifyAccount",
             "user.Register",
-            "user.Login"
+            "user.Login",
+            "user.Settings"
         ]
     },
     "name": "Application",
@@ -82,7 +78,6 @@
                     "var createTables = function(callbackFn){",
                     "    Instinct.app.getController('client.database').createTables(callbackFn);",
                     "};",
-                    "",
                     "",
                     "var openIntro\t= function(callbackFn){",
                     "    if(typeof navigator !== 'undefined' && typeof navigator.splashscreen !== 'undefined'){",
